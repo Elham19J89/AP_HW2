@@ -25,7 +25,7 @@ public class Main {
             }
 
             if(response.equals("EXIT")){
-                System.out.println("bye");
+                System.out.println("Goodbye!");
                 break;
             }
 

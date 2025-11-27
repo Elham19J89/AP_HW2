@@ -95,8 +95,9 @@ public class Bank {
             } else if (Character.isDigit(c)) {
                 digit = true;
             } else if (c == '@' || c == '!' || c == '&' || c == '$' || c == '؟'){
-                special = true;
-            }
+                    special = true;
+                }
+
         }
         return upper && lower && digit && special;
     }
@@ -200,6 +201,12 @@ public class Bank {
         }
 
         User u = users.get(loggedInIdx);
+
+        String balanceStr = u.getBalance();
+        if(balanceStr == null || balanceStr.trim().length() == 0){
+            balanceStr = "0.0";
+        }
+
         double current = Double.parseDouble(u.getBalance());
         current = current + amount;
         u.setBalance(String.valueOf(current));
